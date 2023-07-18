@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'News Feed',
       home: NewsFeed(),
     );
@@ -28,7 +28,7 @@ class _NewsFeedState extends State<NewsFeed> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('News Feed'),
+        title: const Text('News Feed'),
       ),
       body: OrientationBuilder(
         builder: (BuildContext context, Orientation orientation) {
@@ -41,48 +41,92 @@ class _NewsFeedState extends State<NewsFeed> {
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        height: 150,
-                        color: Colors.grey.shade200,
+                        height: 300,
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  offset: Offset(0.0, 1.0),
+                                  blurRadius: 1)
+                            ]),
                         child: Center(
-                          child: Text('Mukarrom'),
+                          child: Container(
+                            width: 150,
+                            height: 150,
+                            // padding: const EdgeInsets.symmetric(vertical: 65),
+                            decoration: BoxDecoration(
+                              color: Colors.blueGrey[100],
+                            ),
+                            child: const Center(child: Text('150 X 150')),
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        height: 150,
-                        color: Colors.grey.shade200,
+                        height: 300,
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  offset: Offset(0.0, 1.0),
+                                  blurRadius: 6.0)
+                            ]),
                         child: Center(
-                          child: Text('Mukarrom'),
+                          child: Container(
+                            width: 150,
+                            height: 150,
+                            // padding: const EdgeInsets.symmetric(vertical: 65),
+                            decoration: BoxDecoration(
+                              color: Colors.blueGrey[100],
+                            ),
+                            child: const Center(child: Text('150 X 150')),
+                          ),
                         ),
                       ),
                     ),
                   ],
                 );
               } else {
-                return Container(
-                  width: 320,
-                  height: 150,
-                  color: Colors.grey[150],
-                  child: Center(
-                    child: Container(
-                      width: 150,
-                      padding: EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.red[400],
+                return Column(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: 150,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(0.0, 1.0),
+                                blurRadius: 6.0)
+                          ]),
+                      child: Center(
+                        child: Container(
+                          width: 150,
+                          padding: const EdgeInsets.symmetric(vertical: 65),
+                          decoration: BoxDecoration(
+                            color: Colors.blueGrey[100],
+                          ),
+                          child: const Center(child: Text('150 X 150')),
+                        ),
                       ),
-                      child: Text('Mukarrom'),
                     ),
-                  ),
+                    const SizedBox(
+                      height: 10,
+                    )
+                  ],
                 );
               }
             },
             separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
+              return const SizedBox(
                 height: 10,
               );
             },
